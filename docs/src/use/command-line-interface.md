@@ -360,7 +360,7 @@ This option specifies the rules to be used.
 
 These rules are merged with any rules specified with configuration files. If the rule is defined in a plugin, you have to prefix the rule ID with the plugin name and a `/`.
 
-To ignore rules in `.eslintrc` configuration files and only run rules specified in the command line, use the `--rule` flag in combination with the [`--no-eslintrc`](#--no-eslintrc) flag.
+To ignore rules in configuration files and only run rules specified in the command line, use the `--rule` flag in combination with the [`--no-eslintrc`](#--no-eslintrc) flag when in eslintrc mode or otherwise with the `--no-config-lookup` flag.
 
 ##### `--rule` example
 
@@ -384,7 +384,7 @@ To ignore rules in `.eslintrc` configuration files and only run rules specified 
 
 {{ npx_tabs ({
     package: "eslint",
-    args: ["--rule", "\'quotes: [error, double]\'", "--no-eslintrc"],
+    args: ["--rule", "\'quotes: [error, double]\'", "--no-config-lookup"],
     comment: "Only apply rule from the command line"
 }) }}
 
@@ -845,7 +845,7 @@ The `content` strategy can be useful in cases where the modification time of you
 
 #### `--init`
 
-This option runs `npm init @eslint/config` to start the config initialization wizard. It's designed to help new users quickly create an `.eslintrc` file by answering a few questions. When you use this flag, the CLI does not perform linting.
+This option runs `npm init @eslint/config` to start the config initialization wizard. It's designed to help new users quickly create a configuration file by answering a few questions. When you use this flag, the CLI does not perform linting.
 
 * **Argument Type**: No argument.
 
